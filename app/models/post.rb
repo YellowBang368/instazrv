@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  mount_uploader :images, PostImagesUploader
+  mount_uploader :images, SingleImageUploader
 
-  validates :image, presence: true
+  validates :images, presence: true
 end

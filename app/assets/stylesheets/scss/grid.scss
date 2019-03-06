@@ -1,0 +1,21 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: auto;
+}
