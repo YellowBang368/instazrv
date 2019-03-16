@@ -18,16 +18,9 @@ class User < ApplicationRecord
 
   #validations
   validates :username, presence: true
-
-  def will_save_change_to_email?
-    false
-  end
-
+  validates :email, :uniqueness => {:allow_blank => true}
   def email_required?
     false
   end
 
-  def email_changed?
-    false
-  end
 end
