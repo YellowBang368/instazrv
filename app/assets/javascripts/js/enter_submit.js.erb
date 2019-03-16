@@ -1,0 +1,9 @@
+$(function() {
+    $(".enter").keypress(function (e) {
+        if(e.which == 13) {
+            $("#chatbox").append($(this).val() + "<br/>");
+            $(this).val("");
+            e.preventDefault();
+        }
+    });
+});

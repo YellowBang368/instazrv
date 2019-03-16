@@ -1,0 +1,19 @@
+<% # Clients of this partial must supply the following variables:
+   # comment
+   # user
+%>
+
+<% creator = comment.creator
+   name = Commontator.commontator_name(creator) || ''
+   link = Commontator.commontator_link(creator, main_app) || ''
+   avatar = Commontator.commontator_avatar(creator, self) || ''
+%>
+
+<div id="comment_<%= comment.id.to_s %>_div" class="comment">
+  <p class="text-bold">
+    <%= link_to creator.email, link %>
+  </p>
+  &nbsp;
+  <%= render partial: 'commontator/comments/body',
+                 locals: { comment: comment } %>
+</div>

@@ -1,8 +1,10 @@
-<% if user_signed_in? %>
-  <% if follows(user) %>
-    <%= link_to "Unfllow", relationship_user_path, method: "DELETE" %>
-  <% else %>
-    <%= link_to "Follow", relationship_user_path, method: "POST" %>
+<% if user_signed_in?  %>
+  <% unless current_user == user %>
+    <% if follows(user) %>
+      <%= link_to "Unfllow", relationship_user_path, method: "DELETE" %>
+    <% else %>
+      <%= link_to "Follow", relationship_user_path, method: "POST" %>
+    <% end %>
   <% end %>
 <% else %>
   <%= link_to "FolloW", relationship_user_path, method: "POST" %>

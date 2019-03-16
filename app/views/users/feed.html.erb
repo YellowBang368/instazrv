@@ -1,11 +1,5 @@
-<% if user_signed_in? %>
-  <%= "@" + current_user.name %></br>
+<div class="feed-container feed">
   <% @feed_posts.each do |post| %>
-    <%= post.user.name %></br>
-    <%= post.desc %></br>
-    <%= image_tag post.images.url  %>
+    <%= render partial: "posts/partials/post_to_feed", locals: {post: post} %>
   <% end %>
-  <%= link_to "sign out", destroy_user_session_path, method: "DELETE" %></br>
-
-  <%= current_user.id %> 
-<% end %>
+</div>

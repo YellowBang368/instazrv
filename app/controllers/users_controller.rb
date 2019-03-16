@@ -11,10 +11,15 @@ class UsersController < ApplicationController
         end
       end
     end
+    @feed_posts.reverse!
+    @feed_posts.each do |post|
+      commontator_thread_show(post)
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.order(:created_at).reverse_order
   end
 
   def create_relationship

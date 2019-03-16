@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, SingleImageUploader
+  acts_as_commontator
   has_many :posts, dependent: :destroy
 
   # Пользователь идентифицируется по follower_id
@@ -7,8 +9,6 @@ class User < ApplicationRecord
 
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships
-
-
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :1omniauthable

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="profile-container">
   <div class="grid-container grid-three-columns" id="userProfile">
     <%= image_tag "default.png", id: "userAvatar", alt: "userAvatar" %>
     <div class="grid-profile">
@@ -20,8 +20,8 @@
 </div>
 
 <div class="container">
-  <div class="grid-container user-posts">
-    <% @user.posts.each do |post| %>
+  <div class="grid-container grid-three-columns user-posts">
+    <% @posts.each do |post| %>
     <%= render partial: "posts/partials/post_to_profile", locals: {post: post} %>
     <% end %>
   </div>

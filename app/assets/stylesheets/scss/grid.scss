@@ -1,8 +1,17 @@
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  max-width: 1000px;
+}
+
+.feed-container {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.profile-container {
+  margin: 0 auto;
+  max-width: 1020px;
 }
 
 .grid-container {
@@ -17,5 +26,5 @@
 .grid-three-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row: auto;
+  grid-template-rows: 1fr;
 }

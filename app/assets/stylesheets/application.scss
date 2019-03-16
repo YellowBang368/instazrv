@@ -1,9 +1,49 @@
+/*
+*= require commontator/application
+*/
+
 // colors
+$main-font-color: #2e2e2e;
+
 
 // @import
 @import "scss/*";
+.thread {
+  display: block!important;
+}
 
 body {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f6f6;
+}
+
+.text-lead {
+  margin: 0;
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.text-bold {
+  font-family: "Open sans", sans-serif;
+  margin: 0;
+  font-weight: 600;
+  color: $main-font-color;
+  font-size: 14px;
+  height: auto;
+}
+
+.text-regular {
+  font-family: "Open sans", sans-serif;
+  margin: 0;
+  font-weight: 400;
+  color: $main-font-color;
+  font-size: 14px;
+  height: auto;
+}
+
+.no-underline {
+  text-decoration: none;
+  
 }

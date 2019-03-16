@@ -1,14 +1,19 @@
 #userProfile {
   grid-template-rows: 250px;
   margin: 5vh 0;
-  grid-column-gap: 80px;
+  grid-column-gap: 40px;
   align-items: center;
   #userAvatar {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
+    min-height: 135px;
+    min-width: 135px;
+    height: auto;
+    width: auto;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
   }
 }
 
@@ -21,10 +26,4 @@
   #userStatus {
 
   }
-}
-
-.user-posts {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 80px;
-  grid-template-rows: auto;
 }
