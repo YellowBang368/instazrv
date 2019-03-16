@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   def feed
     if user_signed_in?
       @feed_posts = []
-      current_user.following.each do |following|
+      following_users = current_user.following + [current_user]
+      following_users.each do |following|
         following.posts.each do |post|
           @feed_posts << post
         end
@@ -43,5 +44,9 @@ class UsersController < ApplicationController
 
   def relationship_exists?(id)
     Relationship.where(follower_id: current_user.id, followed_id: id).count == 1
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
   end
 end
