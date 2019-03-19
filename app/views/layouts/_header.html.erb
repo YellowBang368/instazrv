@@ -1,3 +1,22 @@
-<div>
-  <%= link_to "logout", destroy_user_session_path, method: "DELETE" %>
+<div class="header">
+  <div class="regular-container">
+    <div class="header-flex">
+      <div class="logo">
+        <%= inline_svg "inst-logo.svg", id: "inst-logo" %>
+        <%= image_tag "instagram-writing.svg", id: "inst-writing" %>
+      </div>
+      <div class="search">
+        <div class="search-container">
+          <span class="search-icon">
+            <%= inline_svg "search.svg", id: "search" %>
+          </span>
+          <input placeholder="Search"/>
+        </div>
+      </div>
+      <div class="actions">
+        <%= inline_svg "like.svg" %>
+        <%= inline_svg "profile.svg", id: "profile-svg" %>
+      </div>
+    </div>
+  </div>
 </div>

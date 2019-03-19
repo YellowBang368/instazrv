@@ -11,7 +11,7 @@
 
 <div id="comment_<%= comment.id.to_s %>_div" class="comment">
   <p class="text-bold">
-    <%= link_to creator.email, link %>
+    <%= creator.username %>
   </p>
   &nbsp;
   <%= render partial: 'commontator/comments/body',

@@ -2,6 +2,37 @@
 *= require commontator/application
 */
 
+//fonts
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url('fonts/ProximaNova-Regular.eot');
+  src: url('fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+  url('fonts/ProximaNova-Regular.woff') format('woff'),
+  url('fonts/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('fonts/ProximaNova-Bold.eot');
+  src: url('fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/ProximaNova-Bold.woff') format('woff'),
+  url('fonts/ProximaNova-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+font-family: 'Proxima Nova Semibold';
+src: url('fonts/ProximaNova-Semibold.eot');
+src: url('fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+url('fonts/ProximaNova-Semibold.woff') format('woff'),
+url('fonts/ProximaNova-Semibold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
 // colors
 $main-font-color: #2e2e2e;
 
@@ -16,7 +47,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
 }
 
 .text-lead {
@@ -26,7 +57,7 @@ body {
 }
 
 .text-bold {
-  font-family: "Open sans", sans-serif;
+  font-family: "Proxima Nova Semibold";
   margin: 0;
   font-weight: 600;
   color: $main-font-color;
@@ -35,7 +66,7 @@ body {
 }
 
 .text-regular {
-  font-family: "Open sans", sans-serif;
+  font-family: "Proxima Nova Regular";
   margin: 0;
   font-weight: 400;
   color: $main-font-color;
@@ -45,5 +76,5 @@ body {
 
 .no-underline {
   text-decoration: none;
-  
+
 }

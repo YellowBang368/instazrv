@@ -1,9 +1,9 @@
-<div class="profile-container">
+<div class="regular-container">
   <div class="grid-container grid-three-columns" id="userProfile">
     <%= image_tag "default.png", id: "userAvatar", alt: "userAvatar" %>
     <div class="grid-profile">
       <div class="flex-row">
-        <h2 id="userName"><%= "@#{@user.username}" %></h2>
+        <h2 id="userName"><%= @user.username %></h2>
         <%= render partial: "follow", locals: {user: @user} %>
       </div>
       <div class="grid-three-columns">
