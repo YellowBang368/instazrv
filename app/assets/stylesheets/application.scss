@@ -2,43 +2,14 @@
 *= require commontator/application
 */
 
-//fonts
-@font-face {
-  font-family: 'Proxima Nova Regular';
-  src: url('fonts/ProximaNova-Regular.eot');
-  src: url('fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-  url('fonts/ProximaNova-Regular.woff') format('woff'),
-  url('fonts/ProximaNova-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Proxima Nova Bold';
-  src: url('fonts/ProximaNova-Bold.eot');
-  src: url('fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-  url('fonts/ProximaNova-Bold.woff') format('woff'),
-  url('fonts/ProximaNova-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-font-family: 'Proxima Nova Semibold';
-src: url('fonts/ProximaNova-Semibold.eot');
-src: url('fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-url('fonts/ProximaNova-Semibold.woff') format('woff'),
-url('fonts/ProximaNova-Semibold.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-
 // colors
 $main-font-color: #2e2e2e;
-
+$link-color: #002c58;
 
 // @import
 @import "scss/*";
+@import "fonts";
+
 .thread {
   display: block!important;
 }
@@ -74,7 +45,20 @@ body {
   height: auto;
 }
 
+.text-stats {
+  font-family: "Segoe UI Regular";
+  margin: 0;
+  font-weight: 400;
+  color: $main-font-color;
+  font-size: 16px;
+  height: auto;
+}
+
 .no-underline {
   text-decoration: none;
+}
 
+a {
+  text-decoration: none;
+  color: $link-color;
 }

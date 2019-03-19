@@ -1,10 +1,10 @@
 <div class="header">
   <div class="regular-container">
     <div class="header-flex">
-      <div class="logo">
+      <%= link_to root_path, class: "logo" do %>
         <%= inline_svg "inst-logo.svg", id: "inst-logo" %>
         <%= image_tag "instagram-writing.svg", id: "inst-writing" %>
-      </div>
+      <% end %>
       <div class="search">
         <div class="search-container">
           <span class="search-icon">
@@ -15,7 +15,9 @@
       </div>
       <div class="actions">
         <%= inline_svg "like.svg" %>
-        <%= inline_svg "profile.svg", id: "profile-svg" %>
+        <%= link_to current_user do %>
+          <%= inline_svg "profile.svg", id: "profile-svg" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -35,6 +35,7 @@ gem "rmagick", "~> 2.13.1"
 gem 'devise'
 gem 'inline_svg'
 gem 'commontator', '~> 5.1.0'
+gem 'rails_autolink'
 
 
 # Use Capistrano for deployment

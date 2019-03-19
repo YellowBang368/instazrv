@@ -1,19 +1,18 @@
-<div class="regular-container">
-  <div class="grid-container grid-three-columns" id="userProfile">
+<div class="regular-container profile">
+  <div class="grid-container" id="userProfile">
     <%= image_tag "default.png", id: "userAvatar", alt: "userAvatar" %>
     <div class="grid-profile">
       <div class="flex-row">
         <h2 id="userName"><%= @user.username %></h2>
         <%= render partial: "follow", locals: {user: @user} %>
       </div>
-      <div class="grid-three-columns">
-        <h2 id="userPublications"><%= @user.posts.count %></h2>
-        <h2 id="userFollowers"><%= @user.followers.count %></h2>
-        <h2 id="userFollowing"><%= @user.following.count %></h2>
+      <div class="grid-three-columns" style="margin: 18px 0">
+        <h2 class="text-stats"><span class="text-bold"><%= @user.posts.count %></span> posts</h2>
+        <h2 class="text-stats"><span class="text-bold"><%= @user.followers.count %></span> followers</h2>
+        <h2 class="text-stats"><span class="text-bold"><%= @user.following.count %></span> following</h2>
       </div>
       <div id="userStatus">
-        <%= simple_format(@user.status) %>
-        sfd
+        <%= auto_link(simple_format(@user.status)) %>
       </div>
     </div>
   </div>

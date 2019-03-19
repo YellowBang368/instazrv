@@ -1,6 +1,7 @@
 #userProfile {
   grid-template-rows: 250px;
   margin: 5vh 0;
+  grid-template-columns: 320px 1fr 1fr 150px;
   grid-column-gap: 40px;
   align-items: center;
   #userAvatar {
@@ -19,11 +20,13 @@
 
 .grid-profile {
   grid-column: 2/4;
+  grid-row-gap: 80px; 
   #userName {
-
+    font-family: "Proxima Nova Semibold";
+    font-size: 24px;
+    font-weight: 400;
+    color: $main-font-color;
+    margin: 0;
   }
 
-  #userStatus {
-
-  }
 }
