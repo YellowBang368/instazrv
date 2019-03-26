@@ -33,8 +33,8 @@ class SingleImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-  version :tofeed do
-    process resize_to_fill: [280, 280]
+  version :to_profile do
+    process resize_to_fill: [300, 300]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

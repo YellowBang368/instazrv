@@ -36,7 +36,7 @@ gem 'devise'
 gem 'inline_svg'
 gem 'commontator', '~> 5.1.0'
 gem 'rails_autolink'
-
+gem 'acts_as_votable'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

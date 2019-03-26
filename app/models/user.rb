@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   mount_uploader :avatar, SingleImageUploader
   acts_as_commontator
+  acts_as_voter
   has_many :posts, dependent: :destroy
 
   # Пользователь идентифицируется по follower_id
