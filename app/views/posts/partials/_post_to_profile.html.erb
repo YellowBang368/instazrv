@@ -1,1 +1,9 @@
-<%= image_tag post.images.to_profile.url, class: "image" %>
+<div class="image-container">
+  <%= image_tag post.images.thumbnail.url, class: "image", id: "#{post.id}" %>
+  <%= link_to post, class: "overlay-on-thumb", remote: true do %>
+    <%= inline_svg "like-white.svg" %>
+    <span><%= rand(150).to_s %></span>
+    <%= inline_svg "comment-white.svg" %>
+    <span><%= post.thread.comments.count %></span>
+  <% end %>
+</div>

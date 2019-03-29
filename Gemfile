@@ -37,6 +37,8 @@ gem 'inline_svg'
 gem 'commontator', '~> 5.1.0'
 gem 'rails_autolink'
 gem 'acts_as_votable'
+gem "mini_magick"
+gem 'carrierwave-dimensions'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

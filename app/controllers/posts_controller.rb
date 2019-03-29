@@ -10,6 +10,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      format.js {render layout: false}
+    end
   end
 
   # GET /posts/new
@@ -27,7 +31,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
       if @post.save
-        render :image_crop
+        render :crop
+        # respond_to do |format|
+        #   format.html { redirect_to @post, notice: "Created" }
+        #   format.json { render :show, status: :created, location: @post }
+        # end
       else
         respond_to do |format|
           format.html { render :new }
@@ -39,10 +47,13 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        render :image_crop
-      else
+    if @post.update(post_params)
+      respond_to do |format|
+        format.html { redirect_to @post, notice: "Updated" }
+        format.json { render :show, status: :ok, location: @post }
+      end
+    else
+      respond_to do |format|
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -67,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:desc, :images)
+      params.require(:post).permit( :crop_x, :crop_y, :crop_w, :crop_h, :desc, :images)
     end
 end

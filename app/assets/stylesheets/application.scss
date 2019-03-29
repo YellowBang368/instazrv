@@ -11,6 +11,8 @@ $link-color: #002c58;
 @import "scss/*";
 @import "fonts";
 
+
+
 .thread {
   display: block!important;
 }
@@ -20,6 +22,13 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   background-color: #f9f9f9;
+}
+
+body.block-scroll {
+  overflow: hidden;
+  overflow-y: scroll !important;
+  position: fixed;
+  width: 100%;
 }
 
 .text-lead {

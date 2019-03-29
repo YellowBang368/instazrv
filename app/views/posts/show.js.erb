@@ -1,0 +1,2 @@
+$(".show-post").html("<%= escape_javascript(render partial: 'posts/show', locals: { post: @post } ) %>");
+$("body").addClass("block-scroll");

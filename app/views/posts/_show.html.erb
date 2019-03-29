@@ -1,0 +1,21 @@
+<script>
+  function remove(toRemove) {
+    toRemove.remove()
+    $('body').removeClass("block-scroll")
+  }
+</script>
+
+<div class="overlay-on-profile" onclick="remove(this)">
+  <div class="overlay-content">
+    <div class="post">
+      <%= image_tag post.images.url, class: "post-image" %>
+      <div class="post-body">
+        <div class="post-header">
+          <%= post.user.avatar.url %>
+          <span class="text-bold"><%= post.user.username %></span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
