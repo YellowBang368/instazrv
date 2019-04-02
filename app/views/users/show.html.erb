@@ -18,6 +18,18 @@
   </div>
 </div>
 
+<div class="regular-container">
+  <div class="add-button-container">
+    <%= link_to new_post_path do %>
+      <%= inline_svg "add.svg" %>
+    <% end %>
+  </div>
+  <ul class="profile-menu">
+    <li class="text-lead-bold active">Posts</li>
+    <li class="text-lead-bold">Tagged</li>
+  </ul>
+</div>
+
 <div class="container">
   <div class="grid-container grid-three-columns user-posts">
     <% @posts.each do |post| %>

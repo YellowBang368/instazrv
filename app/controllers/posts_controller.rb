@@ -10,10 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      format.js {render layout: false}
-    end
+    redirect_to Post.find(params[:id]).user
   end
 
   # GET /posts/new
@@ -48,11 +45,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     if @post.update(post_params)
-      # respond_to do |format|
-      #   format.html { redirect_to @post, notice: "Updated" }
-      #   format.json { render :show, status: :ok, location: @post }
-      # end
-      render :crop
+      respond_to do |format|
+        format.html { redirect_to @post, notice: "Updated" }
+        format.json { render :show, status: :ok, location: @post }
+      end
     else
       respond_to do |format|
         format.html { render :edit }

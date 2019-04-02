@@ -1,5 +1,6 @@
 .user-posts {
   grid-column-gap: 25px;
+  grid-row-gap: 25px;
   grid-template-rows: 300px;
   grid-template-columns: repeat(3, 1fr);
   .image-container {
