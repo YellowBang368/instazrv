@@ -14,7 +14,7 @@
      position: relative;/* 30px top margin to avoid conflict with the close button on smaller screens */
      margin: 0 auto;
    }
-   .post {
+   .post-content {
      background-color: #fff;
      display: flex;
      margin: auto 0;
@@ -23,8 +23,31 @@
      max-height: 80vh;
      width: auto;
    }
-   .post-body {
-     display: flex;
-     width: 320px;
+   .user-avatar {
+     width: 20%;
+     border-radius: 50%;
+     border: 1px solid #eee;
    }
+   .post-body {
+     display: grid;
+     width: 320px;
+     grid-template-columns: 1fr;
+     grid-template-rows: 15% 1fr 10%;
+   }
+   .post-header {
+     display: flex;
+     flex-direction: row;
+     padding: 8px 0;
+   }
+   .header-text {
+     display: flex;
+     flex-direction: column;
+   }
+}
+
+.post-content {
+  .comment {
+    display: flex;
+    flex-direction: row;
+  }
 }

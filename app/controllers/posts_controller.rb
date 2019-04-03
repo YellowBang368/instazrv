@@ -10,7 +10,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    redirect_to Post.find(params[:id]).user
+    @post = Post.find(params[:id])
+    commontator_thread_show(@post)
+    respond_to do |format|
+      format.html {
+        redirect_to @post.user
+      }
+      format.js {render layout: false} # Add this line to you respond_to block
+    end
   end
 
   # GET /posts/new

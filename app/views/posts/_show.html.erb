@@ -7,13 +7,30 @@
 
 <div class="overlay-on-profile" onclick="remove(this)">
   <div class="overlay-content">
-    <div class="post">
+    <div class="post-content">
       <%= image_tag post.images.url, class: "post-image" %>
       <div class="post-body">
         <div class="post-header">
-          <%= post.user.avatar.url %>
-          <span class="text-bold"><%= post.user.username %></span>
-          
+          <%= image_tag post_avatar(post.user), class: "user-avatar" %>
+          <div class="header-text">
+            <p class="text-bold"><%= post.user.username %></p>
+            <p class="text-lead">Moscow, Russia</p>
+          </div>
+        </div>
+        <div class="post-comment">
+          <% post.thread.comments.each do |comment| %>
+          <div class="comment">
+            <p class="text-bold">
+              <%= comment.creator.username %>
+            </p>
+            <p class="text-regular comment-text">
+              <%= comment.body %>
+            </p>
+          </div>
+          <% end %>
+        </div>
+        <div class="post-footer">
+
         </div>
       </div>
     </div>
