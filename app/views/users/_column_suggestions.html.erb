@@ -1,0 +1,16 @@
+<div class="column-suggestions">
+  <% suggested_users.each do |user| %>
+    <%= image_tag post_avatar(user), class: "user-avatar" %>
+    <div class="center">
+      <p class="text-bold">
+        <%= link_to "#{user.username}", user, class: "text-bold no-underline" %>
+      </p>
+      <p class="text-lead">
+        Anton Azarov
+      </p>
+    </div>
+    <div class="aside">
+      <%= render partial: "follow", locals: {user: user} %>
+    </div>
+  <% end %>
+</div>

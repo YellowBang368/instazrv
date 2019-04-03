@@ -15,4 +15,13 @@ $(document).ready(function(){
     searchInput.val("")
   });
 
+
+  $("a.follow-button").click(function() {
+    $(this).toggleClass("follow-button unfollow-button");
+  });
+
+  $("a.unfollow-button").click(function() {
+    $(this).toggleClass("unfollow-button follow-button");
+  });
+
 });

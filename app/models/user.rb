@@ -24,4 +24,11 @@ class User < ApplicationRecord
     false
   end
 
+  def followers_count
+    followers.count
+  end
+
+  def posts_count
+    posts.count
+  end
 end
