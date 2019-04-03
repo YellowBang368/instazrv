@@ -34,10 +34,33 @@
   margin-bottom: 10px;
 }
 
-.comment_form_field textarea {
-  padding: 0px;
+.comment_form_field {
+  display: grid;
+  border-top: 1px solid #eee;
+  grid-template-columns: 1fr 10%;
+}
 
+.comment_form_field textarea {
+  padding-top: 10px;
   width: 100%;
+  border: none;
+  font-size: 16px;
+  background: #fff;
+  resize: none;
+  height: 18px;
+  line-height: 18px;
+}
+
+.comment_form_field textarea::placeholder {
+  color: #c4c4c4;
+}
+
+.comment_form_field input {
+  padding-top: 10px;
+  color: #288fef;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .comment_avatar {
