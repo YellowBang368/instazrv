@@ -36,6 +36,8 @@
 
 .comment_form_field {
   display: grid;
+
+  margin-top: 15px;
   border-top: 1px solid #eee;
   grid-template-columns: 1fr 10%;
 }
@@ -49,6 +51,7 @@
   resize: none;
   height: 18px;
   line-height: 18px;
+  outline: none;
 }
 
 .comment_form_field textarea::placeholder {

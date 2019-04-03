@@ -1,26 +1,13 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_for post, local: true, url: "/posts/" do |form| %>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :desc %>
-    <%= form.text_area :desc, id: :post_desc %>
+  <script type="text/javascript">
+    $('input[type=file]').bootstrapFileInput();
+  </script>
+  <div class="post-body">
+    <%= form.text_area :desc, id: :post_desc, placeholder: "Description..." %>
+    <%= form.submit "Post" %>
   </div>
 
-  <div class="field">
-    <%= form.file_field :images %>
-  </div>
+  <%= form.file_field :images, title: "Upload" %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

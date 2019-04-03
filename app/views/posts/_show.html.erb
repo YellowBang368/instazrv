@@ -5,7 +5,7 @@
   }
 </script>
 
-<div class="overlay-on-profile" onclick="remove(this)">
+<div class="overlay-on-profile">
   <div class="overlay-content">
     <div class="post-content">
       <%= image_tag post.images.url, class: "post-image" %>
@@ -35,4 +35,5 @@
       </div>
     </div>
   </div>
+  <%= image_tag("cross.svg", class: "remove-overlay-cross",  :onClick => "remove(this.parentNode)".html_safe) %>
 </div>

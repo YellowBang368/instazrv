@@ -1,0 +1,25 @@
+.overlay-on-profile {
+  height: 100%;
+   width: 100%;
+   position: fixed;; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   background-color: rgba(0,0,0, 0.5); /* Black w/opacity */
+   overflow-x: hidden; /* Disable horizontal scroll */
+   transition: 0.5s;
+   display: flex;
+   .overlay-content {
+     display: flex;
+     position: relative;/* 30px top margin to avoid conflict with the close button on smaller screens */
+     margin: 0 auto;
+   }
+   .remove-overlay-cross {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     fill: #fff;
+     width: 15px;
+     cursor: pointer;
+   }
+ }

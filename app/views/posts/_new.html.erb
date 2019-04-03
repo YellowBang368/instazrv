@@ -1,0 +1,15 @@
+<script type="text/javascript">
+  function remove(toRemove) {
+    toRemove.remove()
+    $('body').removeClass("block-scroll")
+  }
+</script>
+
+<div class="overlay-on-profile">
+  <div class="overlay-content">
+    <div class="post-form">
+      <%= render 'form', post: post %>
+    </div>
+  </div>
+  <%= image_tag("cross.svg", class: "remove-overlay-cross",  :onClick => "remove(this.parentNode)".html_safe) %>
+</div>

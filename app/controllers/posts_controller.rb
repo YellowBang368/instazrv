@@ -23,6 +23,11 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    respond_to do |format|
+      format.js {
+        render layout: false
+      }
+    end
   end
 
   # GET /posts/1/edit
@@ -35,11 +40,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
       if @post.save
-        render :crop
-        # respond_to do |format|
-        #   format.html { redirect_to @post, notice: "Created" }
-        #   format.json { render :show, status: :created, location: @post }
-        # end
+        respond_to do |format|
+          format.html { render :crop }
+          format.js { render :crop, remote: true }
+          format.json { render :show, status: :created, location: @post }
+        end
       else
         respond_to do |format|
           format.html { render :new }
