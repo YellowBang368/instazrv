@@ -1,0 +1,66 @@
+<script type="text/javascript">
+function remove(toRemove) {
+  toRemove.remove()
+  $('body').removeClass("block-scroll")
+}
+
+</script>
+
+
+<script>
+function ajax_then_eval(div,url,method,code_to_eval)
+{
+  var ajax=new XMLHttpRequest();
+
+  ajax.onreadystatechange=function()
+  {
+    if (ajax.readyState==4 && ajax.status==200)
+    {
+      /* //The original
+      var n = document.createElement("div");
+      n.innerHTML = ajax.responseText;
+      document.getElementById(div).appendChild(n);
+      */
+
+      //Clear the throbber gif
+      document.getElementById(div).innerHTML = '';
+
+      var n = document.createElement("div");
+      n.innerHTML = ajax.responseText;
+      document.getElementById(div).appendChild(n);
+
+      var head = document.getElementsByTagName('head').item(0);
+      var script = document.createElement('script');
+      script.setAttribute('type', 'text/javascript');
+      script.text = code_to_eval;
+      head.appendChild(script);
+    }
+    else
+    {
+      document.getElementById(div).innerHTML='<img src="/_css/_defaults/throbber.gif" />';
+    }
+  }
+  ajax.open(method,url,true);
+  ajax.send();
+}
+
+
+function test_function()
+{
+  document.getElementById('ajax_loaded_div').innerHTML = 'test function ran correctly';
+}
+</script>
+
+<div class="overlay-on-profile">
+  <%= image_tag @post.images.url, id: "cropbox" %>
+
+
+  <%= form_for @post do |f| %>
+    <% %w[x y w h].each do |attribute| %>
+      <%= f.hidden_field "crop_#{attribute}" %>
+    <% end %>
+    <%= f.submit "Crop" %>
+  <% end %>
+
+  <%= image_tag("cross.svg", class: "remove-overlay-cross",  :onClick => "remove(this.parentNode)".html_safe) %>
+</div>

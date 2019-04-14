@@ -33,7 +33,7 @@
 <div class="container">
   <div class="grid-container grid-three-columns user-posts">
     <% @posts.each do |post| %>
-    <%= render partial: "posts/partials/post_to_profile", locals: {post: post} %>
+      <%= render partial: "posts/partials/post_to_profile", locals: {post: post} %>
     <% end %>
   </div>
 </div>

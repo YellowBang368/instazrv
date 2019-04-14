@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       format.html {
         redirect_to @post.user
       }
-      format.js {render layout: false} # Add this line to you respond_to block
+      format.js
     end
   end
 
@@ -24,9 +24,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     respond_to do |format|
-      format.js {
-        render layout: false
-      }
+      format.js
     end
   end
 

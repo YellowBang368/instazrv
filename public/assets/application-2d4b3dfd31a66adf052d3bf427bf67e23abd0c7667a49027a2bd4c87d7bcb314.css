@@ -1,0 +1,1175 @@
+/*
+
+
+
+ */
+
+
+.mentions-input-box {
+  position: relative;
+  background: #fff;
+}
+
+.mentions-input-box textarea {
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  resize: none;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mentions-input-box .mentions-autocomplete-list {
+  display: none;
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  margin-top: -2px;
+
+  border-radius:5px;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+     -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+}
+
+.mentions-input-box .mentions-autocomplete-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mentions-input-box .mentions-autocomplete-list li {
+  background-color: #fff;
+  padding: 0 5px;
+  margin: 0;
+  width: auto;
+  border-bottom: 1px solid #eee;
+  height: 26px;
+  line-height: 26px;
+  overflow: hidden;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.mentions-input-box .mentions-autocomplete-list li:last-child {
+  border-radius:5px;
+}
+
+.mentions-input-box .mentions-autocomplete-list li > img,
+.mentions-input-box .mentions-autocomplete-list li > div.icon {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top:5px;
+  margin-right: 5px;
+  -moz-background-origin:3px;
+
+  border-radius:3px;
+}
+
+.mentions-input-box .mentions-autocomplete-list li em {
+  font-weight: bold;
+  font-style: none;
+}
+
+.mentions-input-box .mentions-autocomplete-list li:hover,
+.mentions-input-box .mentions-autocomplete-list li.active {
+  background-color: #f2f2f2;
+}
+
+.mentions-input-box .mentions-autocomplete-list li b {
+  background: #ffff99;
+  font-weight: normal;
+}
+
+.mentions-input-box .mentions {
+  position: absolute;
+  left: 1px;
+  right: 0;
+  top: 1px;
+  bottom: 0;
+  padding: 9px;
+  color: #fff;
+  overflow: hidden;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.mentions-input-box .mentions > div {
+  color: #fff;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.mentions-input-box .mentions > div > strong {
+  font-weight:normal;
+  background: #d8dfea;
+}
+
+.mentions-input-box .mentions > div > strong > span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #000;
+  clear: both;
+}
+
+/* line 14, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_actions {
+  float: right;
+}
+
+/* line 18, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_body {
+  padding-top: 3px;
+}
+
+/* line 22, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_body p {
+  margin: 0px;
+  overflow: hidden;
+}
+
+/* line 28, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_div {
+  clear: both;
+}
+
+/* line 32, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_form_actions {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* line 37, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_form_field {
+  display: grid;
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  grid-template-columns: 1fr 10%;
+}
+
+/* line 45, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_form_field textarea {
+  padding-top: 10px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  background: #fff;
+  resize: none;
+  height: 18px;
+  line-height: 18px;
+  outline: none;
+}
+
+/* line 57, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_form_field textarea::placeholder {
+  color: #c4c4c4;
+}
+
+/* line 61, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_form_field input {
+  padding-top: 10px;
+  color: #288fef;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 69, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_avatar {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+/* line 76, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_timestamp {
+  color: #666;
+}
+
+/* line 80, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_votes {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* line 88, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_votes input,
+.comment_votes img {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 96, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_votes form {
+  margin: 0px;
+}
+
+/* line 100, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_upvote {
+  display: block;
+  height: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* line 109, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_downvote {
+  display: block;
+  height: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* line 118, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_like {
+  float: left;
+}
+
+/* line 122, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_like + .comment_vote_count {
+  float: right;
+}
+
+/* line 126, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_error_explanation {
+  margin-bottom: 10px;
+}
+
+/* line 130, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_error_explanation h3 {
+  margin-top: 5px;
+}
+
+/* line 134, /home/anton/work/inst/app/assets/stylesheets/commontator/comments.scss */
+.comment_error_explanation ul {
+  list-style-position: inside;
+}
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread {
+  display: block !important;
+}
+
+/**/
+/* line 8, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread .commontator_hidden {
+  display: none;
+}
+
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_actions {
+  float: right;
+}
+
+/* line 16, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_header {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Modified from:
+http://www.strangerstudios.com/sandbox/pagination/diggstyle.php */
+/* line 27, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_page_entries_info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 32, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_will_paginate {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 37, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_pagination a {
+  padding: 2px 5px 2px 5px;
+  margin-right: 4px;
+  border: 1px solid #999;
+  text-decoration: none;
+  color: #666;
+}
+
+/* line 46, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_pagination a:hover,
+.thread_pagination a:active {
+  border: 1px solid #555;
+  color: #000;
+}
+
+/* line 53, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_pagination em {
+  padding: 2px 5px 2px 5px;
+  margin-right: 4px;
+  border: 1px solid #555;
+  font-weight: bold;
+  background-color: #555;
+  color: #FFF;
+}
+
+/* line 63, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread_pagination span {
+  padding: 2px 5px 2px 5px;
+  margin-right: 4px;
+  border: 1px solid #EEE;
+  color: #DDD;
+}
+
+/* line 71, /home/anton/work/inst/app/assets/stylesheets/commontator/threads.scss */
+.thread .mentions-input-box .mentions {
+  left: -2px !important;
+  top: -2px !important;
+}
+/* jquery.Jcrop.min.css v0.9.12 (build:20130126) */
+
+.jcrop-holder{direction:ltr;text-align:left;}
+.jcrop-vline,.jcrop-hline{background:#FFF url(Jcrop.gif);font-size:0;position:absolute;}
+.jcrop-vline{height:100%;width:1px!important;}
+.jcrop-vline.right{right:0;}
+.jcrop-hline{height:1px!important;width:100%;}
+.jcrop-hline.bottom{bottom:0;}
+.jcrop-tracker{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;height:100%;width:100%;}
+.jcrop-handle{background-color:#333;border:1px #EEE solid;font-size:1px;height:7px;width:7px;}
+.jcrop-handle.ord-n{left:50%;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-s{bottom:0;left:50%;margin-bottom:-4px;margin-left:-4px;}
+.jcrop-handle.ord-e{margin-right:-4px;margin-top:-4px;right:0;top:50%;}
+.jcrop-handle.ord-w{left:0;margin-left:-4px;margin-top:-4px;top:50%;}
+.jcrop-handle.ord-nw{left:0;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-ne{margin-right:-4px;margin-top:-4px;right:0;top:0;}
+.jcrop-handle.ord-se{bottom:0;margin-bottom:-4px;margin-right:-4px;right:0;}
+.jcrop-handle.ord-sw{bottom:0;left:0;margin-bottom:-4px;margin-left:-4px;}
+.jcrop-dragbar.ord-n,.jcrop-dragbar.ord-s{height:7px;width:100%;}
+.jcrop-dragbar.ord-e,.jcrop-dragbar.ord-w{height:100%;width:7px;}
+.jcrop-dragbar.ord-n{margin-top:-4px;}
+.jcrop-dragbar.ord-s{bottom:0;margin-bottom:-4px;}
+.jcrop-dragbar.ord-e{margin-right:-4px;right:0;}
+.jcrop-dragbar.ord-w{margin-left:-4px;}
+.jcrop-light .jcrop-vline,.jcrop-light .jcrop-hline{background:#FFF;filter:alpha(opacity=70)!important;opacity:.70!important;}
+.jcrop-light .jcrop-handle{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#000;border-color:#FFF;border-radius:3px;}
+.jcrop-dark .jcrop-vline,.jcrop-dark .jcrop-hline{background:#000;filter:alpha(opacity=70)!important;opacity:.7!important;}
+.jcrop-dark .jcrop-handle{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#FFF;border-color:#000;border-radius:3px;}
+.solid-line .jcrop-vline,.solid-line .jcrop-hline{background:#FFF;}
+.jcrop-holder img,img.jcrop-preview{max-width:none;}
+/*
+
+
+*/
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/follow_button.scss */
+.follow-button {
+  color: #fff;
+  border-radius: 3px;
+  background-color: #288fef;
+  font-family: "Proxima Nova Semibold";
+  margin: 0 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 4px 14px;
+}
+
+/* line 13, /home/anton/work/inst/app/assets/stylesheets/scss/follow_button.scss */
+.unfollow-button {
+  font-family: "Proxima Nova Semibold";
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  color: #2e2e2e;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #d5d5d5;
+  padding: 4px 14px;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+}
+
+/* line 7, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.feed-container {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.regular-container {
+  margin: 0 auto;
+  max-width: 1020px;
+}
+
+/* line 17, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.grid-container {
+  display: grid;
+}
+
+/* line 21, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 26, /home/anton/work/inst/app/assets/stylesheets/scss/grid.scss */
+.grid-three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+/* line 5, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .header-flex {
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+}
+
+/* line 15, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 20, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .logo #inst-logo {
+  height: 23px;
+  width: auto;
+  padding-right: 12px;
+}
+/* line 25, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .logo #inst-writing {
+  height: 35px;
+  width: auto;
+  border-left: 1px solid black;
+  padding-left: 12px;
+}
+
+/* line 35, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+/* line 41, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .search-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-self: center;
+  height: inherit;
+}
+/* line 49, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header input {
+  position: relative;
+  height: 24px;
+  width: 200px;
+  border: none;
+  background-color: #f9f9f9;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  text-align: center;
+  outline: none;
+}
+/* line 60, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .search-icon {
+  position: absolute;
+  z-index: 1;
+}
+/* line 64, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header #search {
+  fill: #999;
+  height: 11px;
+}
+
+/* line 71, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .actions {
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* line 74, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .actions svg, .header .actions img {
+  width: 25px;
+  max-height: 42px;
+  margin: 0 12px;
+}
+/* line 79, /home/anton/work/inst/app/assets/stylesheets/scss/header.scss */
+.header .actions #profile-svg {
+  width: 42px;
+  fill: black;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-container {
+  margin: 30px auto;
+  width: 290px;
+  padding: 0 50px;
+  background-color: #fff;
+  border-radius: 1px;
+  border: 1px solid #ddd;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-container .svg-logo {
+  width: 60%;
+  margin-top: 8%;
+  height: 80px;
+}
+
+/* line 19, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-container.no-account {
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/* line 24, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-container.no-account #noAccount {
+  margin: 10px 8px;
+  color: #b3b3b3;
+  font-size: 16px;
+  font-family: "Proxima Nova Regular";
+}
+/* line 30, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-container.no-account a {
+  font-size: 16px;
+  font-family: "Proxima Nova Semibold";
+}
+
+/* line 36, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form {
+  width: 100%;
+}
+/* line 38, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .field input {
+  color: #2e2e2e;
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  margin: 5px 0;
+  width: calc(100% - 12px);
+  background-color: #f9f9f9;
+  padding: 8px 5px;
+}
+/* line 49, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .field input::placeholder {
+  color: #9a9a9a;
+}
+/* line 52, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .field input:focus {
+  border: 1px solid #bbb;
+  outline: none;
+}
+/* line 56, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .actions input {
+  width: 100%;
+  background-color: #288fef;
+  border: none;
+  color: #fff;
+  font-family: "Proxima Nova Semibold";
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* line 68, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .footer-links {
+  display: flex;
+  flex-direction: column;
+}
+/* line 71, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .footer-links a {
+  margin: 10px 0;
+}
+/* line 74, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .footer-links #facebook {
+  font-family: "Proxima Nova Semibold";
+  font-size: 16px;
+}
+/* line 78, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .footer-links #forgotPassword {
+  font-family: "Proxima Nova Regular";
+  font-size: 12px;
+}
+
+/* line 86, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+}
+/* line 95, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .hr-text:before {
+  content: '';
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+/* line 104, /home/anton/work/inst/app/assets/stylesheets/scss/login.scss */
+.login-form .hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  font-size: 15px;
+  font-family: "Proxima Nova Semibold";
+  background-color: #fcfcfa;
+}
+
+/* line 3, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 40% 0;
+  min-width: 400px;
+}
+/* line 9, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form .post-body {
+  display: flex;
+}
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15% 25px;
+  align-items: center;
+}
+/* line 21, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form textarea {
+  padding-top: 10px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  background: #fff;
+  resize: none;
+  height: 18px;
+  line-height: 18px;
+  margin: 18px 0;
+  font-family: "Segoe UI Regular";
+  outline: none;
+}
+/* line 34, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form textarea::placeholder {
+  color: #c4c4c4;
+}
+/* line 37, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form input {
+  padding-top: 10px;
+  color: #288fef;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+/* line 44, /home/anton/work/inst/app/assets/stylesheets/scss/new_post.scss */
+.overlay-on-profile .overlay-content .post-form .file-input-wrapper {
+  margin: 18px 0;
+  background-color: #288fef;
+  color: #fff;
+  font-family: "Segoe UI Regular";
+  font-size: 16px;
+  padding: 12px 8px;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/overlay_on_profile.scss */
+.overlay-on-profile {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  display: flex;
+}
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/scss/overlay_on_profile.scss */
+.overlay-on-profile .overlay-content {
+  display: flex;
+  position: relative;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+  margin: 0 auto;
+}
+/* line 17, /home/anton/work/inst/app/assets/stylesheets/scss/overlay_on_profile.scss */
+.overlay-on-profile .remove-overlay-cross {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  fill: #fff;
+  width: 15px;
+  cursor: pointer;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed {
+  display: flex;
+  flex-direction: column;
+}
+/* line 4, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin: 45px 0;
+  background-color: #fff;
+}
+
+/* line 18, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-header {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 30px;
+  align-items: center;
+}
+/* line 24, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-header .user-avatar {
+  width: 6%;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+/* line 29, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-header .header-text {
+  margin: 0 3%;
+}
+/* line 33, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-image {
+  width: 100%;
+  height: auto;
+}
+
+/* line 42, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer {
+  padding: 8px 18px;
+}
+/* line 44, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer .actions {
+  display: flex;
+  flex-direction: row;
+  margin: 6px 0;
+}
+/* line 48, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer .actions img {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+/* line 53, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer .actions svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+/* line 59, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer .post-desc {
+  margin: 10px 5px;
+}
+/* line 61, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_feed.scss */
+.feed .post .post-footer .post-desc .like-counter {
+  margin: 8px 0;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts {
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  grid-template-rows: 300px;
+  grid-template-columns: repeat(3, 1fr);
+}
+/* line 6, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts .image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+/* line 12, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts .image {
+  width: 100%;
+  height: 100%;
+}
+/* line 16, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts .overlay-on-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  color: #fff;
+  background: rgba(48, 48, 48, 0.3);
+}
+/* line 28, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts .overlay-on-thumb svg {
+  height: 20px;
+  width: auto;
+  margin: 0 10px;
+}
+/* line 34, /home/anton/work/inst/app/assets/stylesheets/scss/post_to_profile.scss */
+.user-posts .image-container:hover .overlay-on-thumb {
+  opacity: 1;
+}
+
+/* line 2, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .post-content {
+  background-color: #fff;
+  display: flex;
+  margin: auto 0;
+}
+/* line 7, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .post-image {
+  max-height: 80vh;
+  width: auto;
+}
+/* line 11, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .user-avatar {
+  width: 20%;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+/* line 16, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .post-body {
+  display: grid;
+  width: 320px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 1fr 10%;
+}
+/* line 22, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .post-header {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+}
+/* line 27, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.overlay-on-profile .header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 34, /home/anton/work/inst/app/assets/stylesheets/scss/show_post.scss */
+.post-content .comment {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions-container {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+
+/* line 7, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 10% 1fr 20%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 10px 7%;
+}
+/* line 15, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions .user-avatar {
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+/* line 20, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 25, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions .aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 30, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.column-suggestions p {
+  margin-left: 2%;
+}
+
+/* line 35, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.row-suggestions {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 4px;
+}
+/* line 39, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.row-suggestions .user {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  align-items: center;
+  padding: 18px 0;
+}
+/* line 48, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.row-suggestions img {
+  text-align: center;
+  width: 80%;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+/* line 54, /home/anton/work/inst/app/assets/stylesheets/scss/suggestions.scss */
+.row-suggestions .center {
+  text-align: center;
+  margin: 8px 0;
+}
+
+/* line 1, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+#userProfile {
+  grid-template-rows: 250px;
+  margin: 5vh 0;
+  grid-template-columns: 320px 1fr 1fr 150px;
+  grid-column-gap: 40px;
+  align-items: center;
+}
+/* line 7, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+#userProfile #userAvatar {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  min-height: 135px;
+  min-width: 135px;
+  height: auto;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* line 21, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.grid-profile {
+  grid-column: 2/4;
+  grid-row-gap: 80px;
+}
+/* line 24, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.grid-profile #userName {
+  font-family: "Proxima Nova Semibold";
+  font-size: 24px;
+  font-weight: 400;
+  color: #2e2e2e;
+  margin: 0;
+}
+
+/* line 33, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.add-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* line 40, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.add-button-container svg {
+  width: 35px;
+  fill: #c4c4c4;
+}
+
+/* line 47, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.profile-menu {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #eee;
+  justify-content: center;
+  padding: 0;
+}
+/* line 53, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.profile-menu li {
+  text-transform: uppercase;
+  list-style: none;
+  margin: 0 20px;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px 0;
+  flex-basis: 70px;
+}
+/* line 61, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.profile-menu li svg {
+  width: 18px;
+}
+/* line 65, /home/anton/work/inst/app/assets/stylesheets/scss/users_show.scss */
+.profile-menu li.active {
+  border-top: 1px solid #333;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url("fonts/ProximaNova-Regular.eot");
+  src: url("fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-Regular.woff") format("woff"), url("fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url("fonts/ProximaNova-Bold.eot");
+  src: url("fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-Bold.woff") format("woff"), url("fonts/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Semibold';
+  src: url("fonts/ProximaNova-Semibold.eot");
+  src: url("fonts/ProximaNova-Semibold.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-Semibold.woff") format("woff"), url("fonts/ProximaNova-Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Segoe UI Regular';
+  src: url("fonts/SegoeUI.eot");
+  src: url("fonts/SegoeUI.eot?#iefix") format("embedded-opentype"), url("fonts/SegoeUI.woff") format("woff"), url("fonts/SegoeUI.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 18, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.thread {
+  display: block !important;
+}
+
+/* line 22, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* line 29, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+body.block-scroll {
+  overflow: hidden;
+  overflow-y: scroll !important;
+  position: fixed;
+  width: 100%;
+}
+
+/* line 36, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.text-lead {
+  margin: 0;
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+/* line 42, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.text-bold {
+  font-family: "Proxima Nova Semibold";
+  margin: 0;
+  font-weight: 600;
+  color: #2e2e2e;
+  font-size: 18px;
+  height: auto;
+}
+
+/* line 51, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.text-lead-bold {
+  font-family: "Proxima Nova Regular";
+  margin: 0;
+  font-weight: 600;
+  color: #aaa;
+  font-size: 16px;
+  height: auto;
+}
+
+/* line 60, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.text-regular {
+  font-family: "Proxima Nova Regular";
+  margin: 0;
+  font-weight: 400;
+  color: #2e2e2e;
+  font-size: 14px;
+  height: auto;
+}
+
+/* line 69, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.text-stats {
+  font-family: "Segoe UI Regular";
+  margin: 0;
+  font-weight: 400;
+  color: #2e2e2e;
+  font-size: 16px;
+  height: auto;
+}
+
+/* line 78, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.comment-text {
+  display: flex;
+  align-items: center;
+}
+
+/* line 83, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+.no-underline {
+  text-decoration: none;
+}
+
+/* line 87, /home/anton/work/inst/app/assets/stylesheets/application.scss */
+a {
+  text-decoration: none;
+  color: #002c58;
+}

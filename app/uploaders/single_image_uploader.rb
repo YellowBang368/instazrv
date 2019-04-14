@@ -11,6 +11,10 @@ class SingleImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
+
   version :thumbnail do
     process :crop
     resize_to_fill(600, 600)

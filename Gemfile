@@ -39,6 +39,7 @@ gem 'rails_autolink'
 gem 'acts_as_votable'
 gem "mini_magick"
 gem 'carrierwave-dimensions'
+gem 'ransack'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

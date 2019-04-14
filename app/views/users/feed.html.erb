@@ -4,13 +4,13 @@
     <% @feed_posts.each_with_index do |post, index| %>
       <%= render partial: "posts/partials/post_to_feed", locals: {post: post} %>
       <% if index % 3 == 0 %>
-        <%= render partial: "row_suggestions", locals: {suggested_users: @suggested_users} %>
+        <%= render partial: "row_suggestions", locals: {suggested_users: @suggested_users[0..4]} %>
       <% end %>
     <% end %>
   </div>
 <% else %>
   <div class="feed-container">
-    <h4 class="text-bold">Suggestions for you</h4>
+    <h4 class="text-bold" style="margin-bottom: 10px;">Suggestions for you</h4>
   </div>
   <div class="feed-container column-suggestions-container">
     <%= render partial: "column_suggestions", locals: {suggested_users: @suggested_users} %>

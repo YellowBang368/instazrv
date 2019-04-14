@@ -14,6 +14,8 @@
   <body>
     <%= render "layouts/header" if controller_name != "sessions" %>
     <%= link_to "exit", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
+    <a class="google" href="https://google.com">google</a>
     <%= yield %>
+    <%= yield :crop %>
   </body>
 </html>

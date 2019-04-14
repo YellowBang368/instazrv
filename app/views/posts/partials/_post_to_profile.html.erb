@@ -1,6 +1,7 @@
+
 <div class="image-container">
   <%= image_tag post.images.thumbnail.url, class: "image", id: "#{post.id}" %>
-  <%= link_to post, class: "overlay-on-thumb", remote: true do %>
+  <%= link_to post, class: "overlay-on-thumb ajax-success", remote: true do %>
     <%= inline_svg "like-white.svg" %>
     <span><%= rand(150).to_s %></span>
     <%= inline_svg "comment-white.svg" %>

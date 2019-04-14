@@ -1,0 +1,2 @@
+$(".overlay-on-profile").remove();
+$(".show-post").html("<%= escape_javascript(render partial: 'posts/crop', locals: { post: @post } ) %>");

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action -> { relationship_exists? params[:id] }, only: [:destroy_relationship]
-
+  before_action :force_json, only: :search
   def feed
-
     # Suggested users to follow
     @suggested_users = User.all.sort_by(&:posts_count).reverse
+    @suggested_users = @suggested_users.reject {|u| u.followers.include?(current_user)}
     @suggested_users.delete(current_user)
 
     # Feed initalizing
@@ -29,8 +29,18 @@ class UsersController < ApplicationController
     @posts = @user.posts.order(:created_at).reverse_order
   end
 
+  def search
+    @users = User.ransack(username_cont: params[:q]).result(distinct: false)
+    respond_to do |format|
+      format.html
+      format.json {
+        @users
+      }
+    end
+  end
+
   def create_relationship
-    Relationship.create(follower_id: current_user.id, followed_id: params[:id])\
+    Relationship.create(follower_id: current_user.id, followed_id: params[:id])
 
     respond_to do |format|
       format.html {
@@ -73,5 +83,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
+  end
+
+  def force_json
+    request.format = :json
   end
 end
