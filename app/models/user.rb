@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  mount_uploader :avatar, SingleImageUploader
+  mount_uploader :avatar, AvatarUploader
   acts_as_commontator
   acts_as_voter
   has_many :posts, dependent: :destroy

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   root "users#feed"
   get "search" => "users#search"
-  resources :users, only: [:show] do
+  get "change_avatar" => "users#change_avatar"
+  resources :users, only: [:show, :edit] do
     post "relationship", to: "users#create_relationship", on: :member
     delete "relationship", to: "users#destroy_relationship", on: :member
   end

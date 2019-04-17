@@ -14,7 +14,16 @@
   <body>
     <%= render "layouts/header" if controller_name != "sessions" %>
     <%= link_to "exit", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
-    <%= yield %>
-    <%= yield :crop %>
+    <div class="regular-container">
+      <div class="edit-profile">
+        <ul class="aside-menu">
+          <li class="text-bold"><%= link_to "Edit Profile", edit_user_path, method: :get %></li>
+          <li class="text-bold"><%= link_to "Change Password", edit_user_registration_path, method: :get %></li>
+        </ul>
+        <div class="main">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

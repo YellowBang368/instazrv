@@ -1,0 +1,7 @@
+<% if user_signed_in? && current_user == user %>
+  <%= link_to change_avatar_path, method: :get, remote: true do %>
+    <%= image_tag post_avatar(@user), id: "userAvatar", alt: "userAvatar" %>
+  <% end %>
+<% else %>
+  <%= image_tag post_avatar(@user), id: "userAvatar", alt: "userAvatar" %>
+<% end %>

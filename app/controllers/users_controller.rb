@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         @feed_posts << post
       end
     end
-    @feed_posts.reverse!
+    @feed_posts = @feed_posts.reverse!.take(6)
 
     # Unwrapping comments in all threads
     @feed_posts.each do |post|
@@ -27,6 +27,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(:created_at).reverse_order
+  end
+
+  def edit
+    respond_to do |format|
+      format.html {render :layout => 'edit_profile'}
+    end
+  end
+
+  def change_avatar
+    respond_to do |format|
+      format.js
+    end
   end
 
   def search
@@ -41,7 +53,6 @@ class UsersController < ApplicationController
 
   def create_relationship
     Relationship.create(follower_id: current_user.id, followed_id: params[:id])
-
     respond_to do |format|
       format.html {
         flash.now[:success] = "SUCCESS"
@@ -50,13 +61,10 @@ class UsersController < ApplicationController
         head 200
       }
     end
-
-    # redirect_back(fallback_location: root_path)
   end
 
   def destroy_relationship
     Relationship.where(follower_id: current_user.id, followed_id: params[:id]).first.destroy
-
     respond_to do |format|
       format.html {
         flash.now[:success] = "SUCCESS"
@@ -65,7 +73,6 @@ class UsersController < ApplicationController
         head 200
       }
     end
-    # redirect_back(fallback_location: root_path)
   end
 
   private

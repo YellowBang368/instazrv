@@ -1,0 +1,9 @@
+<%= form_for user, local: true, remote: true, url: "/users", method: :patch do |form| %>
+
+  <script type="text/javascript">
+    $('input[type=file]').bootstrapFileInput();
+  </script>
+  <%= form.file_field :avatar, title: "Upload" %>
+  <%= form.submit "Change avatar" %>
+
+<% end %>

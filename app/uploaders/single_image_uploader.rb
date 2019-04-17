@@ -20,7 +20,6 @@ class SingleImageUploader < CarrierWave::Uploader::Base
     resize_to_fill(600, 600)
   end
 
-
   def crop
     if model.crop_x.present?
       manipulate! do |img|
