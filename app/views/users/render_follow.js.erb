@@ -1,0 +1,2 @@
+// Rerendering follow button handling click on it
+$('a.follow[href*="<%= @user.id %>"]').replaceWith('<%= escape_javascript(render partial: "follow", locals: {user: @user} ) %>');

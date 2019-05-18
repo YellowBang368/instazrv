@@ -6,9 +6,11 @@
       <p class="text-bold">
         <%= link_to "#{user.username}", user, class: "text-bold no-underline" %>
       </p>
+      <% if user.fullname.present? %>
       <p class="text-lead">
-        Anton Azarov
+        <%= user.fullname %>
       </p>
+      <% end %>
     </div>
     <div class="aside">
       <%= render partial: "follow", locals: {user: user} %>

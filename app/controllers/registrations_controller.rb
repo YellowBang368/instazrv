@@ -23,6 +23,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.html {render :layout => 'edit_profile'}
+    end
+  end
+
   private
   def sign_up_params
     params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
@@ -34,9 +40,5 @@ class RegistrationsController < Devise::RegistrationsController
 
   def account_update_avatar_params
     params.require(:user).permit(:avatar)
-  end
-
-  def new_avatar
-    return true
   end
 end

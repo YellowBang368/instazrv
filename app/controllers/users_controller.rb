@@ -30,9 +30,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    respond_to do |format|
-      format.html {render :layout => 'edit_profile'}
-    end
+    render(:layout => "layouts/application")
   end
 
   def change_avatar
@@ -52,44 +50,30 @@ class UsersController < ApplicationController
   end
 
   def create_relationship
+    @user = User.find(params[:id])
     Relationship.create(follower_id: current_user.id, followed_id: params[:id])
     respond_to do |format|
-      format.html {
-        flash.now[:success] = "SUCCESS"
-      }
-        format.js {
-        head 200
-      }
+      format.html { flash.now[:success] = "SUCCESS" }
+      format.js { render "render_follow" }
     end
   end
 
   def destroy_relationship
+    @user = User.find(params[:id])
     Relationship.where(follower_id: current_user.id, followed_id: params[:id]).first.destroy
     respond_to do |format|
-      format.html {
-        flash.now[:success] = "SUCCESS"
-      }
-        format.js {
-        head 200
-      }
+      format.html { flash.now[:success] = "SUCCESS" }
+      format.js { render "render_follow" }
     end
   end
 
   private
-  def user_params
-    params.require(:user).permit(:id)
-  end
-
-  def signed_in
-    redirect_back(fallback_location: root_path) unless user_signed_in?
-  end
-
   def relationship_exists?(id)
     Relationship.where(follower_id: current_user.id, followed_id: id).count == 1
   end
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
+    params.require(:user).permit(:id, :name, :password, :password_confirmation)
   end
 
   def force_json

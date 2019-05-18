@@ -1,17 +1,4 @@
 $(document).ready(function() {
-  $("a.follow-button").on( "click", function() {
-    $(this).toggleClass("follow-button unfollow-button");
-    $(this).html("unfollow");  });
-
-  $("a.unfollow-button").on("click", function() {
-    $(this).toggleClass("unfollow-button follow-button");
-    $(this).html("follow");
-  });
 
 
-  $("a.google").on("click", function(e) {
-    e.preventDefault();
-    alert("sdf");
-    e.submit();
-  })
 })

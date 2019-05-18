@@ -13,7 +13,6 @@
 
   <body>
     <%= render "layouts/header" if controller_name != "sessions" %>
-    <%= link_to "exit", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
     <%= yield %>
     <%= yield :crop %>
   </body>
