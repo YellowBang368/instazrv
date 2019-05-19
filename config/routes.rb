@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   mount Commontator::Engine => '/commontator'
@@ -11,6 +10,12 @@ Rails.application.routes.draw do
     delete "relationship", to: "users#destroy_relationship", on: :member
     post "relationship", to: "users#create_relationship", on: :member
   end
+
+  resources :posts do
+    post 'like', to: "posts#create_like", on: :member,  defaults: { format: 'js' }
+    delete 'like', to: "posts#destroy_like", on: :member, defaults: { format: 'js' }
+  end
+
 
 
 end

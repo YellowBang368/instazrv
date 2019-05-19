@@ -1,0 +1,9 @@
+<% if current_user.liked?(post) %>
+  <%= link_to like_post_path(post.id), id: 'likeAction', remote: true, method: "DELETE" do %>
+    <%= inline_svg 'liked.svg', class: "like-action liked" %>
+  <% end %>
+<% else %>
+  <%= link_to like_post_path(post.id), id: 'likeAction', remote: true, method: "POST" do %>
+    <%= inline_svg 'like.svg', class: "like-action unliked" %>
+  <% end %>
+<% end %>

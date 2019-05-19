@@ -13,13 +13,13 @@
   <%= image_tag post.images.url, class: "post-image" %>
   <div class="post-footer">
     <div class="actions">
-      <%= inline_svg 'like.svg', class: "like-action unliked" %>
+      <%= render partial: 'posts/like', locals: {post: post} %>
       <%= inline_svg 'comment.svg' %>
       <%= inline_svg 'share.svg' %>
       <!-- place for save tag -->
     </div>
     <div class="post-desc">
-      <h3 class="text-bold like-counter"><%= rand(189) %> likes </h3>
+      <h3 class="text-bold like-counter"><span id="likesCounter" data="<%= post.id %>"><%= post.get_likes.size %></span> likes </h3>
       <%= render partial: "posts/partials/comments", locals: {post: post} %>
     </div>
   </div>

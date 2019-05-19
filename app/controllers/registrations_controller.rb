@@ -48,8 +48,11 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
   end
 
+  # it should has all params that may possibly be here
+  # to compare to other params methods
+  # to choose the way we want handle this query 
   def account_update_params
-    params.require(:user).permit(:username, :fullname, :current_password, :password, :password_confirmation, :avatar)
+    params.require(:user).permit(:username, :fullname, :status, :current_password, :password, :password_confirmation, :avatar)
   end
 
   def account_update_avatar_params
@@ -57,7 +60,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_bio_params
-    params.require(:user).permit(:username, :fullname)
+    params.require(:user).permit(:username, :fullname, :status)
   end
 
   protected

@@ -1,0 +1,3 @@
+// Rerendering like button handling click on it
+$('a#likeAction[href*="<%= @post.id %>"]').replaceWith('<%= escape_javascript(render partial: "like", locals: {post: @post} ) %>');
+$('span#likesCounter[data="<%= @post.id %>"]').html('<%= @likes_count %>');

@@ -78,6 +78,30 @@ class PostsController < ApplicationController
     end
   end
 
+  def create_like
+    post = Post.find(params[:id])
+    post.liked_by current_user
+    respond_to do |format|
+      format.js {
+        @post = Post.find(params[:id])
+        @likes_count = @post.get_likes.size
+        render "render_like"
+      }
+    end
+  end
+
+  def destroy_like
+    post = Post.find(params[:id])
+    post.unliked_by current_user
+    respond_to do |format|
+      format.js {
+        @post = Post.find(params[:id])
+        @likes_count = @post.get_likes.size
+        render "render_like"
+      }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
