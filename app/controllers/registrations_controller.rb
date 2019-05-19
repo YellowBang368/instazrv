@@ -9,6 +9,11 @@ class RegistrationsController < Devise::RegistrationsController
       return resource.update_without_password(account_update_avatar_params)
     end
 
+    # if we've got only username and fullname
+    if account_update_params == account_update_bio_params
+      return resource.update_without_password(account_update_bio_params)
+    end
+
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
     if resource_updated
@@ -24,8 +29,15 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def edit
-    respond_to do |format|
-      format.html {render :layout => 'edit_profile'}
+    unless params[:change_password].present?
+      redirect_back fallback_location: current_user
+    else
+      respond_to do |format|
+        format.html {
+          @edit_password = params[:change_password] == "true"
+          render :layout => 'edit_profile'
+        }
+      end
     end
   end
 
@@ -35,10 +47,14 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
+    params.require(:user).permit(:username, :fullname, :current_password, :password, :password_confirmation, :avatar)
   end
 
   def account_update_avatar_params
     params.require(:user).permit(:avatar)
+  end
+
+  def account_update_bio_params
+    params.require(:user).permit(:username, :fullname)
   end
 end

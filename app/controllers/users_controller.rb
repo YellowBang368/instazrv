@@ -29,10 +29,6 @@ class UsersController < ApplicationController
     @posts = @user.posts.order(:created_at).reverse_order
   end
 
-  def edit
-    render(:layout => "layouts/application")
-  end
-
   def change_avatar
     respond_to do |format|
       format.js

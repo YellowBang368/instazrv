@@ -2,7 +2,7 @@
   font-family: "Proxima Nova Semibold";
   display: flex;
   align-items: center;
-  margin: 0 0 0 15px;
+  margin: 0 15px;
   font-size: 16px;
   border-radius: 3px;
   padding: 4px 14px;
@@ -20,6 +20,7 @@
 }
 
 .edit-profile-button {
+  margin: 0 0 0 15px;
   background-color: $body-color;
   color: $main-font-color;
   border: 1px solid #d5d5d5;

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var options = {
     getValue: function(element) {
-    	return element.username;
+      return element.fullname !== null ? element.fullname : ''; 
     },
     url: function(phrase) {
       return "/search.json?q=" + phrase
@@ -23,7 +23,7 @@ $(document).ready(function() {
     template: {
   		type: "custom",
   		method: function(value, item) {
-  			return '<div class="custom-eac"><%= image_tag("default.png") %><div class="desc"><p class="text-bold">' + item.username + '</p><p class="text-lead">' + item.name + '</p></div></div>';
+  			return '<div class="custom-eac"><%= image_tag("default.png") %><div class="desc"><p class="text-bold">' + item.username + '</p><p class="text-lead">' + value + '</p></div></div>';
   		}
   	}
   };
