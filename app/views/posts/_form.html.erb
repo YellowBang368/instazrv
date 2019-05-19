@@ -1,10 +1,14 @@
-<%= form_for post, local: true, remote: true, url: "/posts/" do |form| %>
+<%= form_for post, local: true, remote: false, url: "/posts/" do |form| %>
 
   <script type="text/javascript">
     $('input[type=file]').bootstrapFileInput();
   </script>
   <div class="post-body">
     <%= form.text_area :desc, id: :post_desc, placeholder: "Description..." %>
+  </div>
+
+  <div class="post-body">
+    <%= form.text_area :address, id: :post_desc, placeholder: "Where was it taken" %>
   </div>
   <%= form.file_field :images, title: "Upload" %>
 

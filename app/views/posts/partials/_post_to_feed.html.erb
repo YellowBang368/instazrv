@@ -5,7 +5,9 @@
       <h3 class="text-bold">
         <%= link_to "#{post.user.username}", post.user, class: "text-bold no-underline" %>
       </h3>
-      <p class="text-lead">Russia, Moscow</p>
+      <% if post.address.present? %>
+        <p class="text-lead"><%= post.address %></p>
+      <% end %>
     </div>
   </div>
   <%= image_tag post.images.url, class: "post-image" %>

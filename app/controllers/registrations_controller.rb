@@ -6,11 +6,13 @@ class RegistrationsController < Devise::RegistrationsController
 
     # If we've got only avatar
     if account_update_params == account_update_avatar_params
+      respond_with resource, location: after_update_path_for(resource)
       return resource.update_without_password(account_update_avatar_params)
     end
 
     # if we've got only username and fullname
     if account_update_params == account_update_bio_params
+      respond_with resource, location: after_update_path_for(resource)
       return resource.update_without_password(account_update_bio_params)
     end
 
@@ -56,5 +58,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def account_update_bio_params
     params.require(:user).permit(:username, :fullname)
+  end
+
+  protected
+  def after_update_path_for(resource)
+    user_path(resource)
   end
 end

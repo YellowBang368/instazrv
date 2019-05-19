@@ -1,4 +1,4 @@
-<%= form_for user, local: true, remote: true, url: "/users", method: :patch do |form| %>
+<%= form_for user, local: true, remote: false, url: "/users", method: :patch do |form| %>
 
   <script type="text/javascript">
     $('input[type=file]').bootstrapFileInput();

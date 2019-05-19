@@ -16,7 +16,8 @@ class PostsController < ApplicationController
       format.html {
         redirect_to @post.user
       }
-      format.js
+      # Show post on click
+      # format.js
     end
   end
 
@@ -85,6 +86,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit( :crop_x, :crop_y, :crop_w, :crop_h, :desc, :images)
+      params.require(:post).permit( :crop_x, :crop_y, :crop_w, :crop_h, :desc, :address, :images)
     end
 end
