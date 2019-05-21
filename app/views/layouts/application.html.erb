@@ -13,6 +13,7 @@
 
   <body>
     <%= render "layouts/header" if controller_name != "sessions" %>
+    <%= render "layouts/flashes" %>
     <%= yield %>
     <%= yield :crop %>
   </body>

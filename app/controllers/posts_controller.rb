@@ -46,7 +46,11 @@ class PostsController < ApplicationController
         end
       else
         respond_to do |format|
-          format.html { render :new }
+          format.html {
+            flash.alert = "true"
+            flash.notice = "Couldn't upload this image. Try again"
+            redirect_to current_user
+          }
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
@@ -57,7 +61,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       respond_to do |format|
-        format.html { redirect_to @post, notice: "Updated" }
+        format.html { redirect_to @post }
         format.json { render :show, status: :ok, location: @post }
       end
     else

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         @feed_posts << post
       end
     end
-    @feed_posts = @feed_posts.reverse!.take(6)
+    @feed_posts = @feed_posts.reverse!
 
     # Unwrapping comments in all threads
     @feed_posts.each do |post|
