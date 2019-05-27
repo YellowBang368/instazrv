@@ -40,6 +40,7 @@ gem 'acts_as_votable'
 gem "mini_magick"
 gem 'carrierwave-dimensions'
 gem 'ransack'
+gem 'fog-aws'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
