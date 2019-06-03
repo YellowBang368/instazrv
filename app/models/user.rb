@@ -19,7 +19,21 @@ class User < ApplicationRecord
 
   #validations
   validates :username, presence: true
+  validates :username, uniqueness: true
   validates :email, :uniqueness => {:allow_blank => true}
+
+  def follow(user)
+    Relationship.create(follower_id: self.id, followed_id: user.id)
+  end
+
+  def unfollow(user)
+    Relationship.where(follower_id: self.id, followed_id: user.id).first.destroy
+  end
+
+  def follows?(user)
+    Relationship.where(follower_id: self.id, followed_id: user.id).exists?
+  end
+
   def email_required?
     false
   end

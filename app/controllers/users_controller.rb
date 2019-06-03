@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action -> { relationship_exists? params[:id] }, only: [:destroy_relationship]
   before_action :force_json, only: :search
   def feed
     # Suggested users to follow
@@ -45,29 +44,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def create_relationship
-    @user = User.find(params[:id])
-    Relationship.create(follower_id: current_user.id, followed_id: params[:id])
-    respond_to do |format|
-      format.html { flash.now[:success] = "SUCCESS" }
-      format.js { render "render_follow" }
-    end
-  end
-
-  def destroy_relationship
-    @user = User.find(params[:id])
-    Relationship.where(follower_id: current_user.id, followed_id: params[:id]).first.destroy
-    respond_to do |format|
-      format.html { flash.now[:success] = "SUCCESS" }
-      format.js { render "render_follow" }
-    end
-  end
-
   private
-  def relationship_exists?(id)
-    Relationship.where(follower_id: current_user.id, followed_id: id).count == 1
-  end
-
   def user_params
     params.require(:user).permit(:id, :name, :password, :password_confirmation)
   end

@@ -12,7 +12,7 @@ class Post < ApplicationRecord
 
   def check_dimensions
     if !images_cache.nil? && (images.width < 600 || images.height < 600)
-      errors.add :image, "Dimension too small."
+      errors.add :image, "Dimension is too small."
     end
   end
 

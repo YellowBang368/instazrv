@@ -31,13 +31,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave'
-gem "rmagick", "~> 2.13.1"
+gem 'rmagick', '~> 2.13.1'
 gem 'devise'
 gem 'inline_svg'
 gem 'commontator', '~> 5.1.0'
 gem 'rails_autolink'
 gem 'acts_as_votable'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'carrierwave-dimensions'
 gem 'ransack'
 gem 'fog-aws'
@@ -46,8 +46,13 @@ gem 'fog-aws'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'capybara', '>= 2.15'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'guard-rspec'
 end
 
 group :development do
