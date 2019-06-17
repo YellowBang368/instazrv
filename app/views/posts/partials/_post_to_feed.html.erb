@@ -19,7 +19,7 @@
       <!-- place for save tag -->
     </div>
     <div class="post-desc">
-      <h3 class="text-bold like-counter"><span id="likesCounter" data="<%= post.id %>"><%= post.get_likes.size %></span> likes </h3>
+      <h3 class="text-bold like-counter"><span id="likesCounter" data="<%= post.id %>"><%= post.cached_votes_total %></span> likes </h3>
       <%= render partial: "posts/partials/comments", locals: {post: post} %>
     </div>
   </div>

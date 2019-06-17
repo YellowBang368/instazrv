@@ -2,20 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :force_json, only: :search
   def feed
-    # Suggested users to follow
-    @suggested_users = User.all.sort_by(&:posts_count).reverse
-    @suggested_users = @suggested_users.reject {|u| u.followers.include?(current_user)}
-    @suggested_users.delete(current_user)
-
-    # Feed initalizing
-    @feed_posts = []
-    following_users = current_user.following + [current_user]
-    following_users.each do |following|
-      following.posts.each do |post|
-        @feed_posts << post
-      end
-    end
-    @feed_posts = @feed_posts.reverse!
+    @feed_posts = get_feed
+    @suggested_users = get_suggested_users(@feed_posts.count > 0 ? 5 : 15)
+    @followings = current_user.followings
 
     # Unwrapping comments in all threads
     @feed_posts.each do |post|
@@ -25,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order(:created_at).reverse_order
+    @posts = @user.get_posts
   end
 
   def change_avatar
@@ -47,6 +36,18 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:id, :name, :password, :password_confirmation)
+  end
+
+  def get_feed
+    Post.where('user_id IN (?)', current_user.followings.ids << current_user.id)
+    .includes(thread: ["comments"])
+  end
+
+  def get_suggested_users(limit)
+    User.order(followers_counter: :desc)
+    .where.not('id IN (?)', current_user.followings.ids)
+    .all_except(current_user)
+    .limit(limit)
   end
 
   def force_json

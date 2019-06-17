@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, counter_cache: :posts_counter
   acts_as_commontable dependent: :destroy
   acts_as_votable
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h

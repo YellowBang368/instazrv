@@ -3,9 +3,6 @@
   <div class="feed-container feed">
     <% @feed_posts.each_with_index do |post, index| %>
       <%= render partial: "posts/partials/post_to_feed", locals: {post: post} %>
-      <% if index % 3 == 0 %>
-        <%= render partial: "row_suggestions", locals: {suggested_users: @suggested_users[0..4]} %>
-      <% end %>
     <% end %>
   </div>
 <% else %>

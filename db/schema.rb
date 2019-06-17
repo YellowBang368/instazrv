@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190519095626) do
+ActiveRecord::Schema.define(version: 20190617150414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20190519095626) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "address"
+    t.integer "cached_votes_total", default: 0
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -86,6 +87,9 @@ ActiveRecord::Schema.define(version: 20190519095626) do
     t.text "status"
     t.string "avatar"
     t.string "fullname"
+    t.integer "posts_counter", default: 0
+    t.integer "followers_counter", default: 0
+    t.integer "followings_counter", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

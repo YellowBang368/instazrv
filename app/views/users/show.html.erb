@@ -11,9 +11,9 @@
         <% end %>
       </div>
       <div class="grid-three-columns" style="margin: 18px 0">
-        <h2 class="text-stats"><span class="text-bold"><%= @user.posts.count %></span> posts</h2>
-        <h2 class="text-stats"><span class="text-bold"><%= @user.followers.count %></span> followers</h2>
-        <h2 class="text-stats"><span class="text-bold"><%= @user.following.count %></span> following</h2>
+        <h2 class="text-stats"><span class="text-bold"><%= @user.posts_count %></span> posts</h2>
+        <h2 class="text-stats"><span class="text-bold"><%= @user.followers_counter %></span> followers</h2>
+        <h2 class="text-stats"><span class="text-bold"><%= @user.followings_counter %></span> following</h2>
       </div>
       <div id="userStatus">
         <%= auto_link(simple_format(@user.status)) %>

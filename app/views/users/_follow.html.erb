@@ -1,6 +1,6 @@
 <% if user_signed_in?  %>
   <% unless current_user == user %>
-    <% if current_user.follows?(user) %>
+    <% if @followings.ids.include?(user.id) && current_user.follows?(use) %>
       <%= link_to "Unfollow", relationship_user_path(user), method: "DELETE", remote: true, class: "simple-button unfollow-button follow" %>
     <% else %>
       <%= link_to "Follow", relationship_user_path(user), method: "POST", remote: true, class: "simple-button follow-button follow" %>
